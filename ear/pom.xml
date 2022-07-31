@@ -1,0 +1,68 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>br.gov.romulopenha.estudo.devops</groupId>
+		<artifactId>buy-more-bom</artifactId>
+		<version>${label.project.version}</version>
+	</parent>
+
+	<artifactId>ear</artifactId>
+	<version>${label.project.version}</version>
+
+	<packaging>ear</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>br.gov.romulopenha.estudo.devops</groupId>
+			<artifactId>internet</artifactId>
+			<version>${label.project.version}</version>
+			<type>war</type>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.maven-compiler-plugin}</version>
+				<configuration>
+					<source>${maven.compiler.target}</source>
+					<target>${maven.compiler.target}</target>
+					<enconding>UTF-8</enconding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- <build> -->
+	<!-- <finalName>${nome.projeto}</finalName> -->
+	<!-- <plugins> -->
+	<!-- <plugin> -->
+	<!-- <groupId>org.apache.maven.plugins</groupId> -->
+	<!-- <artifactId>maven-ear-plugin</artifactId> -->
+	<!-- <version>${version.ear.plugin}</version> -->
+	<!-- <configuration> -->
+	<!-- <version>8</version> -->
+
+	<!-- <defaultLibBundleDir>lib</defaultLibBundleDir> -->
+	<!-- <modules> -->
+	<!-- <webModule> -->
+	<!-- <artifactId>internet</artifactId> -->
+	<!-- <version>1.0.0.0</version> -->
+	<!-- <bundleFileName>internet.war</bundleFileName> -->
+	<!-- <contextRoot>/estudo-devops</contextRoot> -->
+	<!-- </webModule> -->
+	<!-- </modules> -->
+	<!-- <fileNameMapping>no-version</fileNameMapping> -->
+	<!-- </configuration> -->
+	<!-- </plugin> -->
+	<!-- </plugins> -->
+
+	<!-- </build> -->
+</project>

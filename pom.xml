@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<name>estudo-devops-bom</name>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.gov.romulopenha.estudo.devops</groupId>
+	<artifactId>buy-more-bom</artifactId>
+	<version>${label.project.version}</version>
+
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<version.java.ws.rs>1.1.1</version.java.ws.rs>
+		<jboss.resteasy-jaxrs.version>3.0.0.Final</jboss.resteasy-jaxrs.version>
+		<label.project.version>0.0.1</label.project.version>
+		<version.maven-compiler-plugin>2.5.1</version.maven-compiler-plugin>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<nome.projeto>ESTUDO DEVOPS</nome.projeto>
+
+
+		<version.ear.plugin>2.6</version.ear.plugin>
+		<version.ejb.plugin>2.3</version.ejb.plugin>
+		<version.war.plugin>2.1.1</version.war.plugin>
+
+		<label.project.version>0.0.1</label.project.version>
+	</properties>
+
+	<modules>
+		<module>internet</module>
+		<module>ear</module>
+	</modules>
+
+	<distributionManagement>
+		<repository>
+			<id>romulopenha</id>
+			<url>https://pkgs.dev.azure.com/romulopenha/_packaging/romulopenha/maven/v1</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</distributionManagement>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>br.gov.romulopenha.estudo.devops</groupId>
+				<artifactId>internet</artifactId>
+				<version>${label.project.version}</version>
+				<type>war</type>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.maven-compiler-plugin}</version>
+				<configuration>
+					<source>${maven.compiler.target}</source>
+					<target>${maven.compiler.target}</target>
+					<enconding>UTF-8</enconding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
