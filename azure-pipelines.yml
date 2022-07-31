@@ -13,4 +13,4 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'   
-    goals: 'build'
+    goals: 'clean package -Pprod'
