@@ -5,12 +5,12 @@
 *.classpath
 *.project
 *.settings
-/bin/*
-/target/*
+*/bin/*
+*/target/*
 
 #gradle
 .gradle
-/build
+*/build
 
 # Compiled class file
 *.class
